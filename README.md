@@ -100,15 +100,19 @@ The trained model (`ppo_pcga_1M_steps32x32_random_improved.zip`) achieves:
 - Robust performance across different target positions
 - Effective velocity management near the target
 
+**Note**: The model filename contains '32x32' referring to an earlier architecture version. The current recommended training configuration uses a [64, 64] network architecture as specified in `train.py`.
+
 ## 🎮 Environment Physics
 
 The PCGA environment includes:
-- **Gravity**: 9.8 m/s²
-- **Ball radius**: 10 units
-- **Stick length**: 200 units (primary stick)
+- **Gravity**: 9.8 (simulation units/s²)
+- **Ball radius**: 10 (simulation units)
+- **Stick length**: 200 (simulation units for primary stick)
 - **Angle range**: Dynamically calculated based on secondary stick rotation
 - **Friction**: Applied when the stick is horizontal (90°)
 - **Time step**: 1/60 seconds (60 FPS)
+
+**Note**: The environment uses dimensionless simulation units for spatial measurements, while time is measured in seconds.
 
 ## 📝 Files Description
 
