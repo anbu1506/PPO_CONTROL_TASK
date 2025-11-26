@@ -33,11 +33,11 @@ The testing phase demonstrates the trained agent's capability to accurately posi
 ## 📋 Environment Details
 
 ### Observation Space
-The agent observes:
+The agent observes a 4-dimensional vector containing:
 - Ball distance from start (0-200)
 - Target position (0-200)
 - Ball velocity (-100 to 100)
-- Stick angle (84° to 96°)
+- Stick angle in degrees (84° to 96°)
 
 ### Action Space
 Three discrete actions:
@@ -81,6 +81,7 @@ Training parameters:
 - Total timesteps: 1,000,000
 - Learning rate: 1e-3
 - Network architecture: [64, 64]
+- Activation function: sigmoid
 - Batch size: 256
 - Entropy coefficient: 0.03
 
@@ -94,13 +95,13 @@ The test script loads the pre-trained model and demonstrates its performance wit
 
 ## 📊 Model Performance
 
-The trained model (`ppo_pcga_1M_steps32x32_random_improved.zip`) achieves:
+The pre-trained model included in this repository (`ppo_pcga_1M_steps32x32_random_improved.zip`) achieves:
 - Consistent target reaching capability
 - Smooth control transitions
 - Robust performance across different target positions
 - Effective velocity management near the target
 
-**Note**: The model filename contains '32x32' referring to an earlier architecture version. The current recommended training configuration uses a [64, 64] network architecture as specified in `train.py`.
+**Note**: The included model was trained with a 32x32 network architecture. The `train.py` script is configured to train with an improved 64x64 architecture and will save models with filenames like `ppo_pcga_1M_steps64x64_with_position_and_angle_obs.zip`.
 
 ## 🎮 Environment Physics
 
