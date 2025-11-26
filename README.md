@@ -93,15 +93,6 @@ python test.py
 
 The test script loads the pre-trained model and demonstrates its performance with visualization enabled.
 
-## 📊 Model Performance
-
-The pre-trained model included in this repository (`ppo_pcga_1M_steps32x32_random_improved.zip`) achieves:
-- Consistent target reaching capability
-- Smooth control transitions
-- Robust performance across different target positions
-- Effective velocity management near the target
-
-**Note**: The included model was trained with a 32x32 network architecture. The `train.py` script is configured to train with an improved 64x64 architecture and will save models with filenames like `ppo_pcga_1M_steps64x64_with_position_and_angle_obs.zip`.
 
 ## 🎮 Environment Physics
 
@@ -113,8 +104,6 @@ The PCGA environment includes:
 - **Friction**: Applied when the stick is horizontal (90°)
 - **Time step**: 1/60 seconds (60 FPS)
 
-**Note**: The environment uses dimensionless simulation units for spatial measurements, while time is measured in seconds.
-
 ## 📝 Files Description
 
 - `Pcga_env.py`: Custom Gymnasium environment implementation
@@ -124,13 +113,3 @@ The PCGA environment includes:
 - `test.gif`: Visualization of the testing performance
 - `ppo_pcga_1M_steps32x32_random_improved.zip`: Pre-trained model weights
 
-## 🙏 Acknowledgments
-
-This project uses:
-- [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3) for PPO implementation
-- [Gymnasium](https://gymnasium.farama.org/) for environment interface
-- [PyGame](https://www.pygame.org/) for visualization
-
-## 📄 License
-
-This project is open source and available for educational and research purposes.
